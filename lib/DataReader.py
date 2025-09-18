@@ -4,7 +4,7 @@ def get_customers_schema():
     schema = "customer_id int, customer_fname string, customer_lname string, username string, password string, address string, city string, state string, pincode string"
     return schema
 
-#creating customer's data frame 
+#creating customer's data frame
 def read_customers(spark,env):
     conf = ConfigReader.get_app_config(env)
     customers_file_path = conf["customers.file.path"]
