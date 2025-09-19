@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         LABS = credentials('labcreds')
-        JAVA_HOME = '/usr/lib/jvm/java-1.8.0-openjdk-amd64'  // Set your JAVA_HOME path here.
+        JAVA_HOME = '/usr/lib/jvm/java-11-openjdk-amd64'  // Set your JAVA_HOME path here.
         PATH = "${env.JAVA_HOME}/bin:${env.PATH}"  // Add Java binaries to PATH
     }
     
@@ -31,6 +31,7 @@ pipeline {
             steps {
                 script {
                     // Ensure JAVA_HOME is set for PySpark to work
+                    sh 'java -version'
                     sh 'echo $JAVA_HOME'
                     sh 'echo $PATH'
                     
