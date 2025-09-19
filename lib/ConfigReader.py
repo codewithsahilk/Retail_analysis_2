@@ -1,7 +1,7 @@
 import configparser
 from pyspark import SparkConf
 
-#loading the application configs in python dictionary
+#loading the application configs in python's dictionary
 def get_app_config(env):
     config = configparser.ConfigParser()
     config.read("configs/application.conf")
